@@ -34,10 +34,10 @@ You need Apple's command line developer tools (`xcode-select --install`).
 git clone https://github.com/adebayopelumi/hidden-chat.git
 cd hidden-chat
 ./build.sh
-open HiddenChat.app
+open /Applications/HiddenChat.app
 ```
 
-An app you build yourself opens without the warning.
+The build script also puts a copy in your Applications folder, and replaces it each time you rebuild. An app you build yourself opens without the warning.
 
 ## First run
 

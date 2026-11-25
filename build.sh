@@ -9,3 +9,12 @@ cp Info.plist "$APP/Contents/Info.plist"
 swiftc -O Theme.swift ChatList.swift Config.swift OpenAI.swift Claude.swift Tools.swift Screen.swift AreaPicker.swift Highlights.swift Listening.swift Questions.swift main.swift -o "$APP/Contents/MacOS/HiddenChat"
 codesign --force --sign - "$APP"   # ad-hoc signature so macOS can remember its permissions
 echo "Built $PWD/$APP"
+
+# Install into Applications, so it opens like any other app (Spotlight, Launchpad, Dock).
+if [[ -w /Applications ]]; then
+  rm -rf "/Applications/$APP"   # replace, rather than overwrite a copy that may be running
+  ditto "$APP" "/Applications/$APP"
+  echo "Installed /Applications/$APP"
+else
+  echo "Couldn't write to /Applications; drag $APP there yourself."
+fi
