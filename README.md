@@ -37,7 +37,7 @@ cd hidden-chat
 open /Applications/HiddenChat.app
 ```
 
-The build script also puts a copy in your Applications folder, and replaces it each time you rebuild. An app you build yourself opens without the warning.
+The build script installs the app in your Applications folder, and replaces it each time you rebuild. An app you build yourself opens without the warning.
 
 ## First run
 
